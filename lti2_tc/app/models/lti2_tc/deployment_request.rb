@@ -42,7 +42,6 @@ module Lti2Tc
         self.tc_profile_guid = UUID.generate
         self.reg_password = SecureRandom.hex
         self.status = 'prepared'
-        self.tool_proxy_guid = nil
       end
     end
   end
