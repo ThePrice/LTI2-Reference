@@ -19,12 +19,11 @@ module Lti2Tc
         end
       end
 
-      # tool_proxy_guid = nil
+      tool_proxy_guid = nil
       # Old style tool_proxy_guid reassignment happens here
       # Only comment out to test old-style ('late') tool_proxy_guid creation
       tool_proxy_guid = UUID.generate
 
-      deployment_request.tool_proxy_guid = tool_proxy_guid
       deployment_request.status = 'submitted'
       deployment_request.save
 
