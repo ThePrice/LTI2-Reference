@@ -7,7 +7,7 @@ module Lti2Tc
   class DeploymentRequest < ActiveRecord::Base
 
     after_initialize :initialize_fields
-    
+
     def create_lti_message( base_url, current_user, tool_proxy_guid=nil )
       parameters = create_request_tool_deployment( base_url, current_user.to_s, tool_proxy_guid )
       create_lti_message_body( partner_url, parameters,
@@ -42,6 +42,7 @@ module Lti2Tc
         self.tc_profile_guid = UUID.generate
         self.reg_password = SecureRandom.hex
         self.status = 'prepared'
+        self.tool_proxy_guid = nil
       end
     end
   end
